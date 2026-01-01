@@ -20,8 +20,8 @@
 - [x] Task: Conductor - User Manual Verification 'Transformation and Output' (Protocol in workflow.md)
 
 ## Phase 4: CLI and Final Polish
-- [ ] Task: Create CLI entry point for the exporter
-- [ ] Task: Add progress indicators and error handling
-- [ ] Task: Update README with usage instructions
-- [ ] Task: Verify >80% code coverage
+- [x] Task: Create CLI entry point for the exporter
+- [x] Task: Add progress indicators and error handling
+- [x] Task: Update README with usage instructions
+- [x] Task: Verify >80% code coverage
 - [ ] Task: Conductor - User Manual Verification 'CLI and Final Polish' (Protocol in workflow.md)
