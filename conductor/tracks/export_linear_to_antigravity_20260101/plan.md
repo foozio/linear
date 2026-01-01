@@ -7,9 +7,9 @@
 - [x] Task: Conductor - User Manual Verification 'Design and Scaffolding' (Protocol in workflow.md)
 
 ## Phase 2: Data Extraction
-- [ ] Task: Implement Linear Client setup and authentication
-- [ ] Task: Write failing tests for fetching issues and projects
-- [ ] Task: Implement data fetching logic with pagination support
+- [x] Task: Implement Linear Client setup and authentication
+- [x] Task: Write failing tests for fetching issues and projects
+- [x] Task: Implement data fetching logic with pagination support (2e8badb)
 - [ ] Task: Conductor - User Manual Verification 'Data Extraction' (Protocol in workflow.md)
 
 ## Phase 3: Transformation and Output
