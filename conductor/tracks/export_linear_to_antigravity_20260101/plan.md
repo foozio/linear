@@ -1,7 +1,7 @@
 # Plan: Linear to Antigravity Exporter
 
 ## Phase 1: Design and Scaffolding
-- [ ] Task: Define Antigravity import schema and required fields
+- [x] Task: Define Antigravity import schema and required fields
 - [ ] Task: Scaffold new package `packages/export-antigravity`
 - [ ] Task: Configure package.json, tsconfig, and build scripts
 - [ ] Task: Conductor - User Manual Verification 'Design and Scaffolding' (Protocol in workflow.md)
