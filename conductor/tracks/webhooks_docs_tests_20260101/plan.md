@@ -10,10 +10,10 @@
 - [x] Task: Add TSDoc to `packages/sdk/src/webhooks/index.ts` (77f976d)
 - [ ] Task: Conductor - User Manual Verification 'Documentation' (Protocol in workflow.md)
 
-## Phase 3: Unit Testing
+## Phase 3: Unit Testing [checkpoint: a8d4c17]
 - [x] Task: Write failing tests for Webhook signature verification in `packages/sdk/src/_tests/LinearWebhooks.test.ts`
 - [x] Task: Implement/Update Webhook signature verification to pass tests
 - [x] Task: Write failing tests for payload parsing and error handling
 - [x] Task: Implement/Update parsing logic to pass tests (b1d7513)
 - [x] Task: Verify >80% coverage for `packages/sdk/src/webhooks`
-- [ ] Task: Conductor - User Manual Verification 'Unit Testing' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Unit Testing' (Protocol in workflow.md)
