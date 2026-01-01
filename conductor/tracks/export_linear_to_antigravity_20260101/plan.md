@@ -16,7 +16,7 @@
 - [x] Task: Write failing tests for data transformation (Linear -> Antigravity)
 - [x] Task: Implement transformation logic for Issues (044846e)
 - [x] Task: Implement transformation logic for Projects/Users (044846e)
-- [x] Task: Implement file writer (JSON/CSV output)
+- [x] Task: Implement file writer (JSON/CSV output) (8ac1818)
 - [ ] Task: Conductor - User Manual Verification 'Transformation and Output' (Protocol in workflow.md)
 
 ## Phase 4: CLI and Final Polish
