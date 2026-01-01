@@ -141,6 +141,7 @@ export interface LinearWebhookHandler {
 
 /**
  * A webhook payload for an app user notification webhook.
+ * Includes the notification data and a narrowed `type`.
  */
 export interface AppUserNotificationWebhookPayloadWithNotification extends AppUserNotificationWebhookPayload {
   notification: NotificationWebhookPayload;
@@ -148,14 +149,14 @@ export interface AppUserNotificationWebhookPayloadWithNotification extends AppUs
 }
 
 /**
- * A webhook payload for an entity-specific webhook.
+ * A webhook payload for an entity-specific webhook where the entity data is generic.
  */
 export interface EntityWebhookPayloadWithUnknownEntityData extends EntityWebhookPayload {
   data: DataWebhookPayload;
 }
 
 /**
- * A webhook payload for an entity-specific webhook.
+ * Union type representing entity-specific webhook payloads with narrowed data and type fields.
  */
 export type EntityWebhookPayloadWithEntityData =
   | EntityWebhookPayloadWithAttachmentData
@@ -175,7 +176,7 @@ export type EntityWebhookPayloadWithEntityData =
   | EntityWebhookPayloadWithUserData;
 
 /**
- * A webhook payload for an attachment webhook.
+ * Webhook payload for Attachment entities.
  */
 export type EntityWebhookPayloadWithAttachmentData = EntityWebhookPayload & {
   data: AttachmentWebhookPayload;
@@ -183,7 +184,7 @@ export type EntityWebhookPayloadWithAttachmentData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for an audit entry webhook.
+ * Webhook payload for AuditEntry entities.
  */
 export type EntityWebhookPayloadWithAuditEntryData = EntityWebhookPayload & {
   data: AuditEntryWebhookPayload;
@@ -191,7 +192,7 @@ export type EntityWebhookPayloadWithAuditEntryData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for a comment webhook.
+ * Webhook payload for Comment entities.
  */
 export type EntityWebhookPayloadWithCommentData = EntityWebhookPayload & {
   data: CommentWebhookPayload;
@@ -199,7 +200,7 @@ export type EntityWebhookPayloadWithCommentData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for a customer webhook.
+ * Webhook payload for Customer entities.
  */
 export type EntityWebhookPayloadWithCustomerData = EntityWebhookPayload & {
   data: CustomerWebhookPayload;
@@ -207,7 +208,7 @@ export type EntityWebhookPayloadWithCustomerData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for a customer need webhook.
+ * Webhook payload for CustomerNeed entities.
  */
 export type EntityWebhookPayloadWithCustomerNeedData = EntityWebhookPayload & {
   data: CustomerNeedWebhookPayload;
@@ -215,7 +216,7 @@ export type EntityWebhookPayloadWithCustomerNeedData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for a cycle webhook.
+ * Webhook payload for Cycle entities.
  */
 export type EntityWebhookPayloadWithCycleData = EntityWebhookPayload & {
   data: CycleWebhookPayload;
@@ -223,7 +224,7 @@ export type EntityWebhookPayloadWithCycleData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for a document webhook.
+ * Webhook payload for Document entities.
  */
 export type EntityWebhookPayloadWithDocumentData = EntityWebhookPayload & {
   data: DocumentWebhookPayload;
@@ -231,7 +232,7 @@ export type EntityWebhookPayloadWithDocumentData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for an initiative webhook.
+ * Webhook payload for Initiative entities.
  */
 export type EntityWebhookPayloadWithInitiativeData = EntityWebhookPayload & {
   data: InitiativeWebhookPayload;
@@ -239,7 +240,7 @@ export type EntityWebhookPayloadWithInitiativeData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for an initiative update webhook.
+ * Webhook payload for InitiativeUpdate entities.
  */
 export type EntityWebhookPayloadWithInitiativeUpdateData = EntityWebhookPayload & {
   data: InitiativeUpdateWebhookPayload;
@@ -247,7 +248,7 @@ export type EntityWebhookPayloadWithInitiativeUpdateData = EntityWebhookPayload 
 };
 
 /**
- * A webhook payload for an issue webhook.
+ * Webhook payload for Issue entities.
  */
 export type EntityWebhookPayloadWithIssueData = EntityWebhookPayload & {
   data: IssueWebhookPayload;
@@ -255,7 +256,7 @@ export type EntityWebhookPayloadWithIssueData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for an issue label webhook.
+ * Webhook payload for IssueLabel entities.
  */
 export type EntityWebhookPayloadWithIssueLabelData = EntityWebhookPayload & {
   data: IssueLabelWebhookPayload;
@@ -263,7 +264,7 @@ export type EntityWebhookPayloadWithIssueLabelData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for a project webhook.
+ * Webhook payload for Project entities.
  */
 export type EntityWebhookPayloadWithProjectData = EntityWebhookPayload & {
   data: ProjectWebhookPayload;
@@ -271,7 +272,7 @@ export type EntityWebhookPayloadWithProjectData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for a project update webhook.
+ * Webhook payload for ProjectUpdate entities.
  */
 export type EntityWebhookPayloadWithProjectUpdateData = EntityWebhookPayload & {
   data: ProjectUpdateWebhookPayload;
@@ -279,7 +280,7 @@ export type EntityWebhookPayloadWithProjectUpdateData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for a reaction webhook.
+ * Webhook payload for Reaction entities.
  */
 export type EntityWebhookPayloadWithReactionData = EntityWebhookPayload & {
   data: ReactionWebhookPayload;
@@ -287,7 +288,7 @@ export type EntityWebhookPayloadWithReactionData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for a user webhook.
+ * Webhook payload for User entities.
  */
 export type EntityWebhookPayloadWithUserData = EntityWebhookPayload & {
   data: UserWebhookPayload;
@@ -295,28 +296,28 @@ export type EntityWebhookPayloadWithUserData = EntityWebhookPayload & {
 };
 
 /**
- * A webhook payload for an Agent Session Event webhook.
+ * Webhook payload for Agent Session Event events.
  */
 export type AgentSessionEventWebhookPayload = AgentSessionEventWebhookPayloadType & {
   type: "AgentSessionEvent";
 };
 
 /**
- * A webhook payload for an Issue SLA webhook with a narrowed `type`.
+ * Webhook payload for Issue SLA events.
  */
 export type IssueSlaWebhookPayload = IssueSlaWebhookPayloadType & {
   type: "IssueSLA";
 };
 
 /**
- * A webhook payload for an OAuth App webhook with a narrowed `type`.
+ * Webhook payload for OAuth App events.
  */
 export type OAuthAppWebhookPayload = OAuthAppWebhookPayloadType & {
   type: "OAuthApp";
 };
 
 /**
- * A webhook payload for an App User Team Access Changed webhook with a narrowed `type`.
+ * Webhook payload for App User Team Access Changed events (PermissionChange).
  */
 export type AppUserTeamAccessChangedWebhookPayload = AppUserTeamAccessChangedWebhookPayloadType & {
   type: "PermissionChange";
