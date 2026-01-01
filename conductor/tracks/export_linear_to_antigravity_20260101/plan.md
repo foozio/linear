@@ -19,9 +19,9 @@
 - [x] Task: Implement file writer (JSON/CSV output) (8ac1818)
 - [x] Task: Conductor - User Manual Verification 'Transformation and Output' (Protocol in workflow.md)
 
-## Phase 4: CLI and Final Polish
+## Phase 4: CLI and Final Polish [checkpoint: 6782534]
 - [x] Task: Create CLI entry point for the exporter
 - [x] Task: Add progress indicators and error handling
 - [x] Task: Update README with usage instructions
 - [x] Task: Verify >80% code coverage
-- [ ] Task: Conductor - User Manual Verification 'CLI and Final Polish' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'CLI and Final Polish' (Protocol in workflow.md)
