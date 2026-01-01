@@ -2,8 +2,8 @@
 
 ## Phase 1: Design and Scaffolding
 - [x] Task: Define Antigravity import schema and required fields (1363886)
-- [ ] Task: Scaffold new package `packages/export-antigravity`
-- [ ] Task: Configure package.json, tsconfig, and build scripts
+- [x] Task: Scaffold new package `packages/export-antigravity`
+- [x] Task: Configure package.json, tsconfig, and build scripts
 - [ ] Task: Conductor - User Manual Verification 'Design and Scaffolding' (Protocol in workflow.md)
 
 ## Phase 2: Data Extraction
