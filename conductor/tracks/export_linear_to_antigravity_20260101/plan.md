@@ -13,9 +13,9 @@
 - [x] Task: Conductor - User Manual Verification 'Data Extraction' (Protocol in workflow.md)
 
 ## Phase 3: Transformation and Output
-- [ ] Task: Write failing tests for data transformation (Linear -> Antigravity)
-- [ ] Task: Implement transformation logic for Issues
-- [ ] Task: Implement transformation logic for Projects/Users
+- [x] Task: Write failing tests for data transformation (Linear -> Antigravity)
+- [x] Task: Implement transformation logic for Issues (044846e)
+- [x] Task: Implement transformation logic for Projects/Users (044846e)
 - [ ] Task: Implement file writer (JSON/CSV output)
 - [ ] Task: Conductor - User Manual Verification 'Transformation and Output' (Protocol in workflow.md)
 
