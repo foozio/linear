@@ -11,6 +11,7 @@ The Linear API ecosystem aims to empower developers to build powerful, type-safe
 ## Core Capabilities
 - **Typed SDK:** A fully typed TypeScript SDK (`@linear/sdk`) that provides programmatic access to the Linear GraphQL API, ensuring type safety and autocomplete support.
 - **Import Tooling:** A CLI and library (`@linear/import`) designed to facilitate the smooth import of issues, projects, and users from various external systems into Linear.
+- **Export Tooling:** A tool (`@linear/export-antigravity`) to export data from Linear into the Antigravity system format.
 - **Code Generation:** A suite of custom GraphQL Code Generator plugins (`@linear/codegen-*`) to automate the creation of documents, SDK components, and tests, keeping the client in sync with the API schema.
 
 ## Success Metrics
