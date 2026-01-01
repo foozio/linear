@@ -5,7 +5,7 @@
 - [ ] Task: Conductor - User Manual Verification 'Analysis and Preparation' (Protocol in workflow.md)
 
 ## Phase 2: Documentation
-- [ ] Task: Add TSDoc to `packages/sdk/src/webhooks/types.ts`
+- [x] Task: Add TSDoc to `packages/sdk/src/webhooks/types.ts` (6a0719f)
 - [ ] Task: Add TSDoc to `packages/sdk/src/webhooks/client.ts`
 - [ ] Task: Add TSDoc to `packages/sdk/src/webhooks/index.ts`
 - [ ] Task: Conductor - User Manual Verification 'Documentation' (Protocol in workflow.md)
