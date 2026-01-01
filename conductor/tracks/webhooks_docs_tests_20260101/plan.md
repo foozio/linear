@@ -4,7 +4,7 @@
 - [x] Task: Analyze current Webhook implementation and existing tests `packages/sdk/src/_tests/LinearWebhooks.test.ts`
 - [ ] Task: Conductor - User Manual Verification 'Analysis and Preparation' (Protocol in workflow.md)
 
-## Phase 2: Documentation
+## Phase 2: Documentation [checkpoint: ec84548]
 - [x] Task: Add TSDoc to `packages/sdk/src/webhooks/types.ts` (6a0719f)
 - [x] Task: Add TSDoc to `packages/sdk/src/webhooks/client.ts` (f5a7e67)
 - [x] Task: Add TSDoc to `packages/sdk/src/webhooks/index.ts` (77f976d)
