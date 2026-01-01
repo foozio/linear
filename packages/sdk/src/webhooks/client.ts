@@ -16,15 +16,24 @@ export const LINEAR_WEBHOOK_TS_FIELD = "webhookTimestamp";
  *
  * Not exported on purpose: this is an implementation detail of
  * `LinearWebhookClient` and should not be relied upon by SDK consumers.
- *
- * - `method` and `signature` expose the necessary request metadata.
- * - `readRawBody` defers reading/streaming the raw body until invoked.
- * - `send` unifies writing responses in both environments.
  */
 interface HttpAdapter {
+  /** The HTTP method of the request */
   method: string;
+  /** The value of the `linear-signature` header, if present */
   signature: string | null;
+  /**
+   * Reads and returns the raw request body as a Buffer.
+   * This may involve streaming the body in some environments.
+   */
   readRawBody: () => Promise<Buffer>;
+  /**
+   * Sends a response with the given status and body.
+   *
+   * @param status - The HTTP status code
+   * @param body - The response body string
+   * @returns In Fetch runtimes, returns a `Response` object. In Node.js, writes directly to the response stream.
+   */
   send: (status: number, body: string) => Response | void;
 }
 
@@ -90,6 +99,13 @@ export class LinearWebhookClient {
       eventHandlers.set(eventType, handlers);
     };
 
+    /**
+     * Removes an event handler for webhook events.
+     *
+     * @template T - The specific event type (when not using wildcard)
+     * @param eventType - The event type to remove the handler from, or `*` for wildcard handler
+     * @param handler - The handler function to remove
+     */
     handler.off = function <T extends LinearWebhookEventType>(
       eventType: T,
       eventHandler: LinearWebhookEventHandler<Extract<LinearWebhookPayload, { type: T }>>
@@ -106,6 +122,10 @@ export class LinearWebhookClient {
       }
     };
 
+    /**
+     * Removes all event handlers for a specific event type, or all handlers if no event type is specified.
+     * @param eventType - Optional event type to remove handlers for
+     */
     handler.removeAllListeners = function (eventType?: string): void {
       if (eventType) {
         eventHandlers.delete(eventType);
@@ -277,6 +297,7 @@ export class LinearWebhookClient {
    * @param rawBody The webhook request raw body
    * @param signature The signature to verify
    * @param timestamp The `webhookTimestamp` field from the request parsed body
+   * @returns The verified and parsed webhook payload
    */
   public parseData(rawBody: Buffer, signature: string, timestamp?: number): LinearWebhookPayload {
     const verified = this.verify(rawBody, signature, timestamp);
