@@ -15,5 +15,5 @@
 - [x] Task: Implement/Update Webhook signature verification to pass tests
 - [x] Task: Write failing tests for payload parsing and error handling
 - [x] Task: Implement/Update parsing logic to pass tests (b1d7513)
-- [ ] Task: Verify >80% coverage for `packages/sdk/src/webhooks`
+- [x] Task: Verify >80% coverage for `packages/sdk/src/webhooks`
 - [ ] Task: Conductor - User Manual Verification 'Unit Testing' (Protocol in workflow.md)
