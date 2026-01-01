@@ -1,0 +1,35 @@
+{
+  "name": "@linear/export-antigravity",
+  "version": "0.1.0",
+  "description": "Export Linear data to Antigravity format",
+  "author": "Linear Orbit, Inc",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "linear-export-antigravity": "bin/linear-export-antigravity.cjs"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown --clean --format cjs src/cli.ts",
+    "dev": "tsdown src/cli.ts --watch",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@linear/sdk": "workspace:*",
+    "chalk": "^4.1.2",
+    "commander": "^10.0.0",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "^4.0.15"
+  }
+}
