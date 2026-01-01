@@ -1,6 +1,6 @@
 # Plan: Webhooks Documentation and Testing
 
-## Phase 1: Analysis and Preparation
+## Phase 1: Analysis and Preparation [checkpoint: 2d8db4d]
 - [x] Task: Analyze current Webhook implementation and existing tests `packages/sdk/src/_tests/LinearWebhooks.test.ts`
 - [ ] Task: Conductor - User Manual Verification 'Analysis and Preparation' (Protocol in workflow.md)
 
