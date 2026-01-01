@@ -57,6 +57,13 @@ describe("webhooks", () => {
         webhook.verify(rawBody, signature, (parsedBody as Record<string, number>)[LINEAR_WEBHOOK_TS_FIELD])
       ).toBeTruthy();
     });
+
+    it("correct signature, future timestamp > 1 min should fail verification", async () => {
+      const webhook = new LinearWebhookClient("SECRET");
+      const signature = crypto.createHmac("sha256", "SECRET").update(rawBody).digest("hex");
+      const futureTimestamp = new Date().getTime() + 1_000_000;
+      expect(() => webhook.verify(rawBody, signature, futureTimestamp)).toThrowError("Invalid webhook timestamp");
+    });
   });
 
   describe("parseData", () => {
@@ -65,6 +72,13 @@ describe("webhooks", () => {
       const signature = crypto.createHmac("sha256", "SECRET").update(rawBody).digest("hex");
       const payload = client.parseData(rawBody, signature);
       expect(payload).toEqual(parsedBody);
+    });
+
+    it("should throw friendly error for invalid JSON", () => {
+      const client = new LinearWebhookClient("SECRET");
+      const malformedBody = Buffer.from("{ invalid");
+      const signature = crypto.createHmac("sha256", "SECRET").update(malformedBody).digest("hex");
+      expect(() => client.parseData(malformedBody, signature)).toThrowError("Invalid JSON");
     });
 
     it("should throw an error if the signature is invalid", () => {

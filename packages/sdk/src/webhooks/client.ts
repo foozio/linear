@@ -238,7 +238,11 @@ export class LinearWebhookClient {
    * @returns Parsed webhook payload object
    */
   private parseBodyAsWebhookPayload(rawBody: Buffer): LinearWebhookPayload & { webhookTimestamp?: number } {
-    return JSON.parse(rawBody.toString());
+    try {
+      return JSON.parse(rawBody.toString());
+    } catch {
+      throw new Error("Invalid JSON");
+    }
   }
 
   /**
